@@ -8,13 +8,15 @@ public class Manager : MonoBehaviour
 	//resource related variables
 	private float oxytime = 0.0f;
 	public int[] resources;
+	public Text waterCount;
+	public int water = 0;
 	//state related variables
 	private bool shopping = false;
 	private bool finished = false;
 	private float checktime = 0.0f;
-	
-	
-    void Start(){
+
+	void Start()
+	{
         oxytime = 0.0f;
 		checktime = 0.0f;
 		shopping = false;
@@ -24,7 +26,8 @@ public class Manager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update(){
+    void Update()
+	{
 		//gain oxygen every 3 seconds
         oxytime += Time.deltaTime;
 		if (oxytime <= 3.0f){
@@ -41,18 +44,27 @@ public class Manager : MonoBehaviour
 		}
     }
 	
-	private int getcharm(){
+	private int getcharm()
+	{
 		//this will go over all plants and add their charm
 		return 0;
 	}
 	
-	private bool getfinished(){
+	private bool getfinished()
+	{
 		//this will checks if the plants are in the right place for game completion
 		return false;
 	}
 	
-	public bool getworldinteract(){
+	public bool getworldinteract()
+	{
 		//this checks if world interaction is allowed
 		return !(finished || shopping);
+	}
+
+	public void SetWater()
+	{
+		water++;
+		waterCount.text = "Water: " + water;
 	}
 }
