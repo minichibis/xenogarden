@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+/*
+ * CIS 497_2 : Design Patterns
+ * Group Project 1 - XenoGarden
+ * Contributed by: Wolfgang Gross 
+ */
 
 public class GameManager : Singleton<GameManager>
 {

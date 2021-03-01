@@ -1,6 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+/*
+ * CIS 497_2 : Design Patterns
+ * Group Project 1 - XenoGarden
+ * Contributed by: Wolfgang Gross 
+ */
 
 public class Singleton<T> : MonoBehaviour where T : Singleton<T>
 {

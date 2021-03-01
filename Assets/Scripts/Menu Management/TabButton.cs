@@ -4,6 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.Events;
+/*
+ * CIS 497_2 : Design Patterns
+ * Group Project 1 - XenoGarden
+ * Contributed by: Wolfgang Gross 
+ */
 
 [RequireComponent(typeof(Image))]
 public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, IPointerExitHandler

@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+/*
+ * CIS 497_2 : Design Patterns
+ * Group Project 1 - XenoGarden
+ * Contributed by: Wolfgang Gross 
+ */
 
 public class TabGroup : MonoBehaviour
 {
