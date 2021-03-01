@@ -3,22 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Manager : MonoBehaviour
+public class Manager : MonoBehaviour, Timerble
 {
 	//resource related variables
-	private float oxytime = 0.0f;
+	public int oxyticks = 0;
 	public int[] resources;
 	public Text waterCount;
 	public int water = 0;
 	//state related variables
 	private bool shopping = false;
 	private bool finished = false;
-	private float checktime = 0.0f;
 
 	void Start()
 	{
-        oxytime = 0.0f;
-		checktime = 0.0f;
+        oxyticks = 0;
 		shopping = false;
 		finished = false;
 		//RESOURCE ORDER: CHARM, MONEY, OXYGEN, WATER, CARBON, ENERGY, RUST, CHROME
@@ -28,21 +26,21 @@ public class Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
 	{
-		//gain oxygen every 3 seconds
-        oxytime += Time.deltaTime;
-		if (oxytime <= 3.0f){
-			oxytime = 0.0f;
-			resources[2]++;
-		}
-		//check several vital things only now and again so we dont loop over every plant every frame
-		checktime += Time.deltaTime;
-		if(checktime <= 1.0f){
-			checktime = 0.0f;
-			resources[0] = getcharm();
-			finished = getfinished();
-			
-		}
+		
     }
+	
+	public void timerUpdate(){
+		//charm
+		resources[0] = getcharm();
+		//finished
+		finished = getfinished();
+		//oxytimer
+		oxyticks++;
+		if (oxyticks <= 2){
+			resources[2]++;
+			oxyticks = 0;
+		}
+	}
 	
 	private int getcharm()
 	{
