@@ -14,7 +14,23 @@ public class TimeSignal : MonoBehaviour
 		if(timer >= interval){
 			timer -= interval;
 			foreach(Timerble t in observers){
-				
+				t.timerUpdate();
+				if(t is PlantUpkeep){
+					bool damage = false;
+					PlantUpkeep p = t as PlantUpkeep;
+					int[] n = p.returnUpkeepNeeds();
+					int[] h = p.returnUpkeepHas();
+					for(int i = 2; i < h.Length; i++){
+						h[i] -= n[i];
+						if(h[i] < 0){
+							h[i] = 0;
+							damage = true;
+						}
+					}
+					if(damage){
+						p.damageUpkeep();
+					}
+				}
 			}
 		}
 	}
