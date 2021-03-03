@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Manager : MonoBehaviour, Timerble
 {
+	//public
+	public List<GameObject> planttypes = new List<GameObject>();
 	//resource related variables
 	public int oxyticks = 0;
 	public int[] resources;

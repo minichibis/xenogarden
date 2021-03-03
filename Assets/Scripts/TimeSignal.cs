@@ -8,6 +8,11 @@ public class TimeSignal : MonoBehaviour
 	private float interval = 1.5f;
 	
 	public List<Timerble>observers = new List<Timerble>();
+	public List<Timerble>removethis = new List<Timerble>();
+	
+	void Start(){
+       observers.Add(Object.FindObjectOfType<Manager>());
+    }
 	
 	void Update(){
 		timer += Time.deltaTime;
@@ -32,6 +37,11 @@ public class TimeSignal : MonoBehaviour
 					}
 				}
 			}
+			//remove
+			foreach(Timerble t in removethis){
+				observers.Remove(t);
+			}
+			removethis = new List<Timerble>();
 		}
 	}
 }

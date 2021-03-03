@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class PlantBase : MonoBehaviour, Timerble
 {
-	
+	public DirtPatch dirt;
 	//OK SO
 	//returning plant output is probably going to be calculated through thePlantUpdate
 	//charm will be done through an external script, through PlantCharming interface
@@ -22,5 +22,10 @@ public abstract class PlantBase : MonoBehaviour, Timerble
 	
 	public abstract void thePlantUpdate();
 	
-	
+	public virtual void killThis(){
+		dirt.p = null;
+		TimeSignal t = Object.FindObjectOfType<TimeSignal>();
+		t.removethis.Add(this);
+		Destroy(gameObject);
+	}
 }
