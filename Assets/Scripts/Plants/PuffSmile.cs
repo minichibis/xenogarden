@@ -30,7 +30,6 @@ public class PuffSmile : PlantBase, PlantCharming, PlantUpkeep
 	}
 	
 	public void damageUpkeep(){
-		Debug.Log("a");
 		if(damaged > 2){
 			killThis();
 		}
