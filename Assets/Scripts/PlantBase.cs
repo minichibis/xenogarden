@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class PlantBase : MonoBehaviour, Timerble
 {
 	public DirtPatch dirt;
+	public Color currentcolor = Color.white;
 	//OK SO
 	//returning plant output is probably going to be calculated through thePlantUpdate
 	//charm will be done through an external script, through PlantCharming interface
@@ -16,6 +17,11 @@ public abstract class PlantBase : MonoBehaviour, Timerble
         
     }
 	
+	void Update(){
+		transform.localScale = Vector3.Lerp(transform.localScale, Vector3.one, 0.1f);
+		GetComponent<Renderer>().material.color = Color.Lerp(GetComponent<Renderer>().material.color, currentcolor, 0.05f);
+	}
+	
 	public virtual void timerUpdate(){
 		thePlantUpdate();
 	}
@@ -26,6 +32,9 @@ public abstract class PlantBase : MonoBehaviour, Timerble
 		dirt.p = null;
 		TimeSignal t = Object.FindObjectOfType<TimeSignal>();
 		t.removethis.Add(this);
+		if(this is PlantCharming){
+			dirt.m.resources[0] -= (this as PlantCharming).returnCharm();
+		}
 		Destroy(gameObject);
 	}
 }

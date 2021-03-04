@@ -15,6 +15,8 @@ public class Manager : MonoBehaviour, Timerble
 	//state related variables
 	private bool shopping = false;
 	private bool finished = false;
+	public int heldseed = 1;
+	public int heldtool = 0;
 
 	void Start()
 	{
@@ -46,8 +48,14 @@ public class Manager : MonoBehaviour, Timerble
 	
 	private int getcharm()
 	{
-		//this will go over all plants and add their charm
-		return 0;
+		int totalcharm = 0;
+		PlantBase[] l = Object.FindObjectsOfType<PlantBase>();
+		foreach(PlantBase p in l){
+			if(p is PlantCharming){
+				totalcharm += (p as PlantCharming).returnCharm();
+			}
+		}
+		return totalcharm;
 	}
 	
 	private bool getfinished()

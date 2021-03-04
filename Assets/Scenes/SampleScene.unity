@@ -2946,10 +2946,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planttypes:
   - {fileID: 8794294006845185553, guid: 9585ef5eef78f854aa4853badfb5806d, type: 3}
+  - {fileID: 74577551733638906, guid: ab18a6da7b9a2954a9f629f23b8ebb7e, type: 3}
+  - {fileID: 5064375437211691130, guid: 467d60231cacf254aa92cac22c7814c6, type: 3}
   oxyticks: 0
   resources: 
   waterCount: {fileID: 0}
   water: 0
+  heldseed: 1
+  heldtool: 0
 --- !u!1 &1845692040
 GameObject:
   m_ObjectHideFlags: 0
