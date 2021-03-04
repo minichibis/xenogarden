@@ -32,10 +32,20 @@ public class DirtPatch : MonoBehaviour
 	}
 	
 	void OnMouseDown(){
-		if(p == null && m.resources[2] >= 3){
-			m.resources[2] -= 3;
-			p = f.MakePlant(this, 1);
+		int[] cost = m.plantcosts[m.heldseed - 1];
+		if(p == null && resourcecheck(cost)){
+			for (int i = 0; i < 8; i++){
+				m.resources[i] -= cost[i];
+			}
+			p = f.MakePlant(this, m.heldseed);
 			GetComponent<Renderer>().material = m1;
 		}
+	}
+	
+	private bool resourcecheck(int[] cost){
+		for (int i = 0; i < 8; i++){
+			if (cost[i] > m.resources[i]) return false;
+		}
+		return true;
 	}
 }
