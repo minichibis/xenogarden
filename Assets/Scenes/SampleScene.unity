@@ -2084,8 +2084,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m1: {fileID: 2100000, guid: de9855c34a7d77749bb5a4c860b74a03, type: 2}
   m2: {fileID: 2100000, guid: 3a619120f5cae584dbb64fcb99b38d21, type: 2}
-  m: {fileID: 0}
-  f: {fileID: 0}
+  m: {fileID: 1765445548}
+  f: {fileID: 763581658}
   p: {fileID: 0}
 --- !u!1 &991795853
 GameObject:
@@ -2194,8 +2194,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m1: {fileID: 2100000, guid: de9855c34a7d77749bb5a4c860b74a03, type: 2}
   m2: {fileID: 2100000, guid: 3a619120f5cae584dbb64fcb99b38d21, type: 2}
-  m: {fileID: 0}
-  f: {fileID: 0}
+  m: {fileID: 1765445548}
+  f: {fileID: 763581658}
   p: {fileID: 0}
 --- !u!1 &1216447019
 GameObject:
@@ -2304,8 +2304,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m1: {fileID: 2100000, guid: de9855c34a7d77749bb5a4c860b74a03, type: 2}
   m2: {fileID: 2100000, guid: 3a619120f5cae584dbb64fcb99b38d21, type: 2}
-  m: {fileID: 0}
-  f: {fileID: 0}
+  m: {fileID: 1765445548}
+  f: {fileID: 763581658}
   p: {fileID: 0}
 --- !u!1 &1291941490
 GameObject:
@@ -2414,8 +2414,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m1: {fileID: 2100000, guid: de9855c34a7d77749bb5a4c860b74a03, type: 2}
   m2: {fileID: 2100000, guid: 3a619120f5cae584dbb64fcb99b38d21, type: 2}
-  m: {fileID: 0}
-  f: {fileID: 0}
+  m: {fileID: 1765445548}
+  f: {fileID: 763581658}
   p: {fileID: 0}
 --- !u!1 &1387033551
 GameObject:
@@ -2524,8 +2524,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m1: {fileID: 2100000, guid: de9855c34a7d77749bb5a4c860b74a03, type: 2}
   m2: {fileID: 2100000, guid: 3a619120f5cae584dbb64fcb99b38d21, type: 2}
-  m: {fileID: 0}
-  f: {fileID: 0}
+  m: {fileID: 1765445548}
+  f: {fileID: 763581658}
   p: {fileID: 0}
 --- !u!1 &1418413858
 GameObject:
@@ -2724,8 +2724,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m1: {fileID: 2100000, guid: de9855c34a7d77749bb5a4c860b74a03, type: 2}
   m2: {fileID: 2100000, guid: 3a619120f5cae584dbb64fcb99b38d21, type: 2}
-  m: {fileID: 0}
-  f: {fileID: 0}
+  m: {fileID: 1765445548}
+  f: {fileID: 763581658}
   p: {fileID: 0}
 --- !u!1 &1622903122
 GameObject:
@@ -2834,8 +2834,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m1: {fileID: 2100000, guid: de9855c34a7d77749bb5a4c860b74a03, type: 2}
   m2: {fileID: 2100000, guid: 3a619120f5cae584dbb64fcb99b38d21, type: 2}
-  m: {fileID: 0}
-  f: {fileID: 0}
+  m: {fileID: 1765445548}
+  f: {fileID: 763581658}
   p: {fileID: 0}
 --- !u!1 &1669048616
 GameObject:
@@ -2944,8 +2944,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m1: {fileID: 2100000, guid: de9855c34a7d77749bb5a4c860b74a03, type: 2}
   m2: {fileID: 2100000, guid: 3a619120f5cae584dbb64fcb99b38d21, type: 2}
-  m: {fileID: 0}
-  f: {fileID: 0}
+  m: {fileID: 1765445548}
+  f: {fileID: 763581658}
   p: {fileID: 0}
 --- !u!1 &1765445546
 GameObject:
@@ -3108,8 +3108,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m1: {fileID: 2100000, guid: de9855c34a7d77749bb5a4c860b74a03, type: 2}
   m2: {fileID: 2100000, guid: 3a619120f5cae584dbb64fcb99b38d21, type: 2}
-  m: {fileID: 0}
-  f: {fileID: 0}
+  m: {fileID: 1765445548}
+  f: {fileID: 763581658}
   p: {fileID: 0}
 --- !u!1 &1940431482
 GameObject:

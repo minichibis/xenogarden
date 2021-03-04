@@ -11,8 +11,6 @@ public class DirtPatch : MonoBehaviour
 	public PlantBase p;
     // Start is called before the first frame update
     void Start(){
-        m = Object.FindObjectOfType<Manager>();
-		f = Object.FindObjectOfType<DirtFactory>();
 		p = null;
     }
 
@@ -22,8 +20,10 @@ public class DirtPatch : MonoBehaviour
     }
 	
 	void OnMouseOver(){
-		if(p == null){
+		if(checkmousey()){
 			GetComponent<Renderer>().material = m2;
+		} else{
+			GetComponent<Renderer>().material = m1;
 		}
 	}
 	
@@ -32,13 +32,19 @@ public class DirtPatch : MonoBehaviour
 	}
 	
 	void OnMouseDown(){
-		int[] cost = m.plantcosts[m.heldseed - 1];
-		if(p == null && resourcecheck(cost)){
-			for (int i = 0; i < 8; i++){
-				m.resources[i] -= cost[i];
+		if(m.heldtool == 0){
+			int[] cost = m.plantcosts[m.heldseed - 1];
+			if(p == null && resourcecheck(cost)){
+				for (int i = 0; i < 8; i++){
+					m.resources[i] -= cost[i];
+				}
+				p = f.MakePlant(this, m.heldseed);
+				GetComponent<Renderer>().material = m1;
 			}
-			p = f.MakePlant(this, m.heldseed);
-			GetComponent<Renderer>().material = m1;
+		} else if(m.heldtool == 1 && p != null){
+			p.killThis();
+		} else if(checkmousey()){
+			addresource(p as PlantUpkeep, m.heldtool);
 		}
 	}
 	
@@ -48,4 +54,25 @@ public class DirtPatch : MonoBehaviour
 		}
 		return true;
 	}
+	
+	private bool checkmousey(){
+		if (m.heldseed > 0 && p == null) return true;
+		if(m.heldtool == 1 && p != null) return true;
+		if(m.heldtool > 1 && p is PlantUpkeep){
+			PlantUpkeep pl = p as PlantUpkeep;
+			if(m.heldtool == 2 && pl.returnUpkeepNeeds()[2] > 0){
+				return true;
+			} else if(m.heldtool == 3 && pl.returnUpkeepNeeds()[3] > 0){
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	private void addresource(PlantUpkeep pl, int r){
+		int addthis = Mathf.Min(m.resources[r], 5);
+		pl.returnUpkeepHas()[r] += addthis;
+		m.resources[r] -= addthis;
+	}
+	
 }

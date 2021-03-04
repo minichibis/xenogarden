@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PuffSmile : PlantBase, PlantCharming, PlantUpkeep
+public class JellCheese : PlantBase, PlantCharming, PlantUpkeep
 {
     int damaged = 0;
-	int[] haves = new int[]{0, 0, 12, 0, 0, 0, 0, 0};
-	int[] needs = new int[]{0, 0, 2, 0, 0, 0, 0, 0};
+	int[] haves = new int[]{0, 0, 0, 5, 0, 0, 0, 0};
+	int[] needs = new int[]{0, 0, 0, 1, 0, 0, 0, 0};
 
     public override void thePlantUpdate(){
-		haves[2] = Mathf.Min(haves[2], 12);
-		if(haves[2] >= 2){
+		haves[3] = Mathf.Min(haves[3], 5);
+		if(haves[3] >= 1){
 			damaged--;
 			damaged = Mathf.Max(damaged, 0);
 			currentcolor = Color.Lerp(currentcolor, Color.white, 0.25f);
@@ -18,7 +18,7 @@ public class PuffSmile : PlantBase, PlantCharming, PlantUpkeep
 	}
 	
 	public int returnCharm(){
-		return 15;
+		return 25;
 	}
 	
 	public int[] returnUpkeepNeeds(){

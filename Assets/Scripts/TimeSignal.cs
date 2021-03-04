@@ -18,6 +18,12 @@ public class TimeSignal : MonoBehaviour
 		timer += Time.deltaTime;
 		if(timer >= interval){
 			timer -= interval;
+			//remove
+			foreach(Timerble t in removethis){
+				observers.Remove(t);
+			}
+			removethis = new List<Timerble>();
+			//modify
 			foreach(Timerble t in observers){
 				t.timerUpdate();
 				if(t is PlantUpkeep){
@@ -37,11 +43,6 @@ public class TimeSignal : MonoBehaviour
 					}
 				}
 			}
-			//remove
-			foreach(Timerble t in removethis){
-				observers.Remove(t);
-			}
-			removethis = new List<Timerble>();
 		}
 	}
 }

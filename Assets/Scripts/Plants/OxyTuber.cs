@@ -13,7 +13,7 @@ public class OxyTuber : PlantBase, PlantCharming
 			transform.localScale = new Vector3(1.5f, 0.5f, 0.5f);
 			currentcolor = Color.Lerp(currentcolor, new Color(0.5f, 0.1f, 0f, 1f), 0.15f);
 			resourceticks = 5;
-			dirt.m.resources[2]+= 5;
+			dirt.m.resources[2]+= 3;
 			killticks--;
 			if(killticks <= 0){
 				killThis();
