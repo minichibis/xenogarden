@@ -27,15 +27,15 @@ public class Manager : MonoBehaviour, Timerble
 
 	void Start()
 	{
-		pennycharm = 0;
-		nickelcharm = 0;
+		pennycharm = 15;
+		nickelcharm = 15;
         oxyticks = 0;
 		shopping = false;
 		finished = false;
 		//RESOURCE ORDER: CHARM, MONEY, OXYGEN, WATER, CARBON, ENERGY, RUST, CHROME
 		resources = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
-		//WATERBULB, OXYTUBER, PUFFSMILE, JELLCHEESE
-		plantcosts = new int[][]{new int[]{0, 0, 3, 0, 0, 0, 0, 0},new int[]{0, 0, 10, 10, 0, 0, 0, 0},new int[]{0, 3, 15, 15, 0, 0, 0, 0},new int[]{0, 10, 10, 20, 0, 0, 0, 0}};
+		//WATERBULB, OXYTUBER, PUFFSMILE, JELLCHEESE, CARBONVENT, TOIL RIG, CARBON GNOME
+		plantcosts = new int[][]{new int[]{0, 0, 3, 0, 0, 0, 0, 0},new int[]{0, 0, 10, 10, 0, 0, 0, 0},new int[]{0, 0, 15, 15, 0, 0, 0, 0},new int[]{0, 5, 10, 20, 0, 0, 0, 0},new int[]{0, 15, 25, 0, 0, 0, 0, 0},new int[]{0, 0, 20, 0, 5, 0, 0, 0},new int[]{0, 5, 0, 0, 5, 0, 0, 0}};
     }
 
     // Update is called once per frame
@@ -52,6 +52,15 @@ public class Manager : MonoBehaviour, Timerble
 			heldtool = 0;
 		} else if (Input.GetKeyDown(KeyCode.Alpha4)){
 			heldseed = 4;
+			heldtool = 0;
+		} else if (Input.GetKeyDown(KeyCode.Alpha5)){
+			heldseed = 5;
+			heldtool = 0;
+		} else if (Input.GetKeyDown(KeyCode.Alpha6)){
+			heldseed = 6;
+			heldtool = 0;
+		} else if (Input.GetKeyDown(KeyCode.Alpha7)){
+			heldseed = 7;
 			heldtool = 0;
 		} else if (Input.GetKeyDown(KeyCode.Q)){
 			heldseed = 0;

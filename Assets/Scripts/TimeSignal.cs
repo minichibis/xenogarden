@@ -6,6 +6,7 @@ public class TimeSignal : MonoBehaviour, Subject
 {
     private float timer = 0.0f;
 	private float interval = 1.5f;
+	private bool tickneed = false;
 	
 	public List<Timerble>observers = new List<Timerble>();
 	public List<Timerble>removethis = new List<Timerble>();
@@ -20,6 +21,7 @@ public class TimeSignal : MonoBehaviour, Subject
 			timer -= interval;
 			removeObserver();
 			notifyObservers();
+			tickneed = !tickneed;
 		}
 	}
 
@@ -28,8 +30,9 @@ public class TimeSignal : MonoBehaviour, Subject
 		foreach (Timerble t in observers)
 		{
 			t.timerUpdate();
-			if (t is PlantUpkeep)
+			if (tickneed && t is PlantUpkeep)
 			{
+				
 				bool damage = false;
 				PlantUpkeep p = t as PlantUpkeep;
 				int[] n = p.returnUpkeepNeeds();

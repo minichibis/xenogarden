@@ -13,7 +13,7 @@ public class PuffSmile : PlantBase, PlantCharming, PlantUpkeep
 		if(haves[2] >= 2){
 			damaged--;
 			damaged = Mathf.Max(damaged, 0);
-			currentcolor = Color.Lerp(currentcolor, Color.white, 0.25f);
+			currentcolor = Color.white;
 		}
 	}
 	

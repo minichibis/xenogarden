@@ -13,7 +13,7 @@ public class JellCheese : PlantBase, PlantCharming, PlantUpkeep
 		if(haves[3] >= 1){
 			damaged--;
 			damaged = Mathf.Max(damaged, 0);
-			currentcolor = Color.Lerp(currentcolor, Color.white, 0.25f);
+			currentcolor = Color.white;
 		}
 	}
 	
