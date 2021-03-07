@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Manager : MonoBehaviour, Timerble
 {
@@ -9,7 +10,14 @@ public class Manager : MonoBehaviour, Timerble
 	public CoinFactory coinf;
 	//public
 	public List<GameObject> planttypes = new List<GameObject>();
-	public int[][] plantcosts;
+	//WATERBULB, OXYTUBER, PUFFSMILE, JELLCHEESE, CARBONVENT, TOIL RIG, CARBON GNOME
+	public int[][] plantcosts = new int[][]{new int[]{0, 0, 3, 0, 0, 0, 0, 0},new int[]{0, 0, 10, 10, 0, 0, 0, 0},new int[]{0, 0, 15, 15, 0, 0, 0, 0},new int[]{0, 5, 10, 20, 0, 0, 0, 0},new int[]{0, 15, 25, 0, 0, 0, 0, 0},new int[]{0, 0, 20, 0, 5, 0, 0, 0},new int[]{0, 5, 0, 0, 5, 0, 0, 0}};
+	public string[] tooltips = new string[]{"WATERBULB, the most basic plant. Has a short lifespan and provides water. Costs 3 OXYGEN to plant.", "OXYTUBER, a root which taps into the ground and extracts oxygen. Some see it as beautiful. Costs 10 OXYGEN, 10 WATER to plant.", "PUFFSMILE, a baloon-like plant with aesthetic appeal, that must be inflated using the oxy-injector to survive. Costs 15 OXYGEN, 15 WATER to plant.", "JELLCHEESE, an odd plant which some consider beautiful. It must be watered regularly to survive. Costs 5 MONEY, 10 OXYGEN, 20 WATER to plant.", "CARBONVENT, a plant that produces the rare industrial resource of carbon. It's appearance clashes quite hideously with other plants, however. Costs 15 MONEY 25 OXYGEN to plant.","TOIL RIG, a literal industrial plant used to extract mass quantities of resources from the ground. Ugly but effective. Costs 20 OXYGEN, 5 CARBON to plant.", "CARBON GNOME, a strange little plant with an infinite lifespan. Unlike other carbon plants it is seen as quite cute. Costs 5 MONEY 5 CARBON to plant.", "SHOVEL, a basic tool for digging up unwanted plants.", "OXY-INJECTOR, used to provide oxygen to plants that rely on it, like PUFFSMILES.", "WATERING CAN, used to water plants that need it to live, like JELLCHEESE."};
+	public Sprite[] toolimg;
+	public GameObject photo;
+	public Text tooltext;
+	public Text restext;
+	public Text wintext;
 	//resource related variables
 	public int oxyticks = 0;
 	public int[] resources;
@@ -24,6 +32,7 @@ public class Manager : MonoBehaviour, Timerble
 	//coin related
 	private int pennycharm = 0;
 	private int nickelcharm = 0;
+	public bool won = false;
 
 	void Start()
 	{
@@ -34,8 +43,7 @@ public class Manager : MonoBehaviour, Timerble
 		finished = false;
 		//RESOURCE ORDER: CHARM, MONEY, OXYGEN, WATER, CARBON, ENERGY, RUST, CHROME
 		resources = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
-		//WATERBULB, OXYTUBER, PUFFSMILE, JELLCHEESE, CARBONVENT, TOIL RIG, CARBON GNOME
-		plantcosts = new int[][]{new int[]{0, 0, 3, 0, 0, 0, 0, 0},new int[]{0, 0, 10, 10, 0, 0, 0, 0},new int[]{0, 0, 15, 15, 0, 0, 0, 0},new int[]{0, 5, 10, 20, 0, 0, 0, 0},new int[]{0, 15, 25, 0, 0, 0, 0, 0},new int[]{0, 0, 20, 0, 5, 0, 0, 0},new int[]{0, 5, 0, 0, 5, 0, 0, 0}};
+		won = false;
     }
 
     // Update is called once per frame
@@ -71,6 +79,23 @@ public class Manager : MonoBehaviour, Timerble
 		} else if (Input.GetKeyDown(KeyCode.E)){
 			heldseed = 0;
 			heldtool = 3;
+		}
+		if(heldtool > 0){
+			tooltext.text = "SELECTED: " + tooltips[heldtool + 6];
+			photo.GetComponent<SpriteRenderer>().sprite = toolimg[heldtool + 6];
+		} else{
+			tooltext.text = "SELECTED: " + tooltips[heldseed - 1];
+			photo.GetComponent<SpriteRenderer>().sprite = toolimg[heldseed - 1];
+		}
+		restext.text = "RESOURCES \n CHARM : " + Mathf.Max(resources[0], 0) + " \n MONEY: " + resources[1] + " \n OXYGEN: " + resources[2] + " \n WATER: " + resources[3] + " \n CARBON " + resources[4] + " \n\nGAIN 50 MONEY TO WIN";
+		
+		wintext.text = "";
+		if(resources[1] >= 50){
+			wintext.text = "YOU WIN! Press R to Restart!";
+			won = true;
+		}
+		if (Input.GetKeyDown(KeyCode.R)){
+			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 		}
     }
 	
@@ -113,7 +138,8 @@ public class Manager : MonoBehaviour, Timerble
 	public bool getworldinteract()
 	{
 		//this checks if world interaction is allowed
-		return !(finished || shopping);
+		return !won;
+		//return !(finished || shopping);
 	}
 
 	public void SetWater()
@@ -126,14 +152,14 @@ public class Manager : MonoBehaviour, Timerble
 		if(Random.Range(0f, 30f) < 25){
 			int c = Mathf.Max(resources[0] + 5 - pennycharm, 0);
 			if(Random.Range(0f, 100f) <= c){
-				pennycharm += 10;
+				pennycharm += 5;
 				coinf.CoinMake(1);
 			}
 		} else{
 			int c = Mathf.Max(resources[0] - 15 - nickelcharm, 0);
 			if(Random.Range(0f, 100f) <= c){
 				nickelcharm += 15;
-				pennycharm += 10;
+				pennycharm += 5;
 				coinf.CoinMake(2);
 			}
 		}

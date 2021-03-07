@@ -16,12 +16,14 @@ public class TimeSignal : MonoBehaviour, Subject
     }
 	
 	void Update(){
-		timer += Time.deltaTime;
-		if(timer >= interval){
-			timer -= interval;
-			removeObserver();
-			notifyObservers();
-			tickneed = !tickneed;
+		if(!(observers[0] as Manager).won){
+			timer += Time.deltaTime;
+			if(timer >= interval){
+				timer -= interval;
+				removeObserver();
+				notifyObservers();
+				tickneed = !tickneed;
+			}
 		}
 	}
 

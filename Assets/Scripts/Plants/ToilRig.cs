@@ -24,6 +24,6 @@ public class ToilRig : PlantBase, PlantCharming
 	}
 	
 	public int returnCharm(){
-		return -25;
+		return -15;
 	}
 }
