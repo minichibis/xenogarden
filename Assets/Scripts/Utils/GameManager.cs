@@ -11,8 +11,10 @@ using UnityEngine.SceneManagement;
 public class GameManager : Singleton<GameManager>
 {
     //public GameObject pauseMenu;
+    public GameObject shopUI;
 
     private string CurrentLevelName = string.Empty;
+    //private string CurrentLevelName = string.Empty;
 
     #region This code makes this class a Singleton
     //Done by Singleton Class
@@ -88,6 +90,15 @@ public class GameManager : Singleton<GameManager>
 
     private void Update()
     {
+        if(CurrentLevelName == string.Empty)
+        {
+            shopUI.SetActive(false);
+        }
+        else
+        {
+            shopUI.SetActive(true);
+        }
+
         if (Input.GetKeyDown(KeyCode.P))
         {
             Pause();
