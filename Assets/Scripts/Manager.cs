@@ -12,7 +12,19 @@ public class Manager : MonoBehaviour, Timerble
 	public List<GameObject> planttypes = new List<GameObject>();
 	//WATERBULB, OXYTUBER, PUFFSMILE, JELLCHEESE, CARBONVENT, TOIL RIG, CARBON GNOME
 	public int[][] plantcosts = new int[][]{new int[]{0, 0, 3, 0, 0, 0, 0, 0},new int[]{0, 0, 10, 10, 0, 0, 0, 0},new int[]{0, 0, 15, 15, 0, 0, 0, 0},new int[]{0, 5, 10, 20, 0, 0, 0, 0},new int[]{0, 15, 25, 0, 0, 0, 0, 0},new int[]{0, 0, 20, 0, 5, 0, 0, 0},new int[]{0, 5, 0, 0, 5, 0, 0, 0}};
-	public string[] tooltips = new string[]{"WATERBULB, the most basic plant. Has a short lifespan and provides water. Costs 3 OXYGEN to plant.", "OXYTUBER, a root which taps into the ground and extracts oxygen. Some see it as beautiful. Costs 10 OXYGEN, 10 WATER to plant.", "PUFFSMILE, a baloon-like plant with aesthetic appeal, that must be inflated using the oxy-injector to survive. Costs 15 OXYGEN, 15 WATER to plant.", "JELLCHEESE, an odd plant which some consider beautiful. It must be watered regularly to survive. Costs 5 MONEY, 10 OXYGEN, 20 WATER to plant.", "CARBONVENT, a plant that produces the rare industrial resource of carbon. It's appearance clashes quite hideously with other plants, however. Costs 15 MONEY 25 OXYGEN to plant.","TOIL RIG, a literal industrial plant used to extract mass quantities of resources from the ground. Ugly but effective. Costs 20 OXYGEN, 5 CARBON to plant.", "CARBON GNOME, a strange little plant with an infinite lifespan. Unlike other carbon plants it is seen as quite cute. Costs 5 MONEY 5 CARBON to plant.", "SHOVEL, a basic tool for digging up unwanted plants.", "OXY-INJECTOR, used to provide oxygen to plants that rely on it, like PUFFSMILES.", "WATERING CAN, used to water plants that need it to live, like JELLCHEESE."};
+	
+	public string[] tooltips = new string[]{
+		"WATERBULB, the most basic plant. Has a short lifespan and provides water. Costs 3 OXYGEN to plant.", 
+		"OXYTUBER, a root which taps into the ground and extracts oxygen. Some see it as beautiful. Costs 10 OXYGEN, 10 WATER to plant.", 
+		"PUFFSMILE, a baloon-like plant with aesthetic appeal, that must be inflated using the oxy-injector to survive. Costs 15 OXYGEN, 15 WATER to plant.", 
+		"JELLCHEESE, an odd plant which some consider beautiful. It must be watered regularly to survive. Costs 5 MONEY, 10 OXYGEN, 20 WATER to plant.", 
+		"CARBONVENT, a plant that produces the rare industrial resource of carbon. It's appearance clashes quite hideously with other plants, however. Costs 15 MONEY 25 OXYGEN to plant.",
+		"TOIL RIG, a literal industrial plant used to extract mass quantities of resources from the ground. Ugly but effective. Costs 20 OXYGEN, 5 CARBON to plant.", 
+		"CARBON GNOME, a strange little plant with an infinite lifespan. Unlike other carbon plants it is seen as quite cute. Costs 5 MONEY 5 CARBON to plant.", 
+		"SHOVEL, a basic tool for digging up unwanted plants.", 
+		"OXY-INJECTOR, used to provide oxygen to plants that rely on it, like PUFFSMILES.", 
+		"WATERING CAN, used to water plants that need it to live, like JELLCHEESE."};
+	
 	public Sprite[] toolimg;
 	public GameObject photo;
 	public Text tooltext;
@@ -80,17 +92,23 @@ public class Manager : MonoBehaviour, Timerble
 			heldseed = 0;
 			heldtool = 3;
 		}
-		if(heldtool > 0){
+		//Change to text script
+		if (heldtool > 0){
+			//Change to text script
 			tooltext.text = "SELECTED: " + tooltips[heldtool + 6];
 			photo.GetComponent<SpriteRenderer>().sprite = toolimg[heldtool + 6];
 		} else{
+			//Change to text script
 			tooltext.text = "SELECTED: " + tooltips[heldseed - 1];
 			photo.GetComponent<SpriteRenderer>().sprite = toolimg[heldseed - 1];
 		}
+		//Change to text script
 		restext.text = "RESOURCES \n CHARM : " + Mathf.Max(resources[0], 0) + " \n MONEY: " + resources[1] + " \n OXYGEN: " + resources[2] + " \n WATER: " + resources[3] + " \n CARBON " + resources[4] + " \n\nGAIN 50 MONEY TO WIN";
-		
+
+		//Change to text script
 		wintext.text = "";
 		if(resources[1] >= 50){
+			//Change to text script
 			wintext.text = "YOU WIN! Press R to Restart!";
 			won = true;
 		}
@@ -145,6 +163,7 @@ public class Manager : MonoBehaviour, Timerble
 	public void SetWater()
 	{
 		water++;
+		//Change to text script
 		waterCount.text = "Water: " + water;
 	}
 	
