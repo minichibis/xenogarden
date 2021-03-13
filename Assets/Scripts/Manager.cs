@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class Manager : MonoBehaviour, Timerble
 {
+	//LevelUI Reference
+	public LevelUI levelUi;
+
 	//stuff
 	public CoinFactory coinf;
 	//public
@@ -92,17 +95,64 @@ public class Manager : MonoBehaviour, Timerble
 			heldseed = 0;
 			heldtool = 3;
 		}
-		//Change to text script
-		if (heldtool > 0){
-			//Change to text script
-			tooltext.text = "SELECTED: " + tooltips[heldtool + 6];
-			photo.GetComponent<SpriteRenderer>().sprite = toolimg[heldtool + 6];
-		} else{
-			//Change to text script
-			tooltext.text = "SELECTED: " + tooltips[heldseed - 1];
+
+		if (heldtool > 0)
+		{
+            #region Temporary Logic for setting name field
+            if (heldtool == 1)
+			{
+				levelUi.setName("Shovel");
+			}
+			else if (heldtool == 2)
+			{
+				levelUi.setName("Watering Can");
+			}
+			else if (heldtool == 3)
+			{
+				levelUi.setName("Oxygen Injector");
+			}
+            #endregion
+
+            //tooltext.text = "SELECTED: " + tooltips[heldtool + 6]; //Need swap panel to display full description
+            photo.GetComponent<SpriteRenderer>().sprite = toolimg[heldtool + 6];
+		} 
+		else
+		{
+            #region Temporary Logic for setting name field
+            if (heldseed == 1)
+			{
+				levelUi.setName("WaterBulb");
+			}
+			else if(heldseed == 2)
+			{
+				levelUi.setName("OxyTuber");
+			}
+			else if (heldseed == 3)
+			{
+				levelUi.setName("PuffSmile");
+			}
+			else if (heldseed == 4)
+			{
+				levelUi.setName("JellCheese");
+			}
+			else if (heldseed == 5)
+			{
+				levelUi.setName("CarbonVent");
+			}
+			else if (heldseed == 6)
+			{
+				levelUi.setName("ToilRig");
+			}
+			else if (heldseed == 7)
+			{
+				levelUi.setName("CarbonGnome");
+			}
+            #endregion
+
+            //tooltext.text = "SELECTED: " + tooltips[heldseed - 1];
 			photo.GetComponent<SpriteRenderer>().sprite = toolimg[heldseed - 1];
 		}
-		//Change to text script
+		//Change to text script,, Move Goal at end to new text object
 		restext.text = "RESOURCES \n CHARM : " + Mathf.Max(resources[0], 0) + " \n MONEY: " + resources[1] + " \n OXYGEN: " + resources[2] + " \n WATER: " + resources[3] + " \n CARBON " + resources[4] + " \n\nGAIN 50 MONEY TO WIN";
 
 		//Change to text script
