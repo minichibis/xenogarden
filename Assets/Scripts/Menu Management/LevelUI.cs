@@ -9,6 +9,9 @@ public class LevelUI : MonoBehaviour
     public GameObject ResourcePanel;
     public GameObject SelectPanel;
 
+    //Goal Value Reference
+    public TextMeshProUGUI goalText;
+
     //Resource Value References
     public TextMeshProUGUI charmText;
     public TextMeshProUGUI oxygenText;
@@ -26,6 +29,7 @@ public class LevelUI : MonoBehaviour
     private bool toolShovelObtained = false; //should only cost 1 gold
     private bool toolCanObtained = false; 
     private bool toolInjectorObtained = false;
+    public int goalAmount;
 
     void Start()
     {
@@ -155,5 +159,13 @@ public class LevelUI : MonoBehaviour
         nameText.text = nameToSet;
     }
 
+    #endregion
+
+    #region setGoal Function
+    //Handle goal text using the money inputed
+    public void setGoal(int playerMoney)
+    {
+        goalText.text = "" + playerMoney + " / " + goalAmount + " Gold Earned"; 
+    }
     #endregion
 }

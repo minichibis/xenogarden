@@ -152,13 +152,13 @@ public class Manager : MonoBehaviour, Timerble
             //tooltext.text = "SELECTED: " + tooltips[heldseed - 1];
 			photo.GetComponent<SpriteRenderer>().sprite = toolimg[heldseed - 1];
 		}
-		//Change to text script,, Move Goal at end to new text object
-		restext.text = "RESOURCES \n CHARM : " + Mathf.Max(resources[0], 0) + " \n MONEY: " + resources[1] + " \n OXYGEN: " + resources[2] + " \n WATER: " + resources[3] + " \n CARBON " + resources[4] + " \n\nGAIN 50 MONEY TO WIN";
-
-		//Change to text script
+		//Change to text script,, Move Goal at end to new text object,, Seperately do cash value in [goal] setting
+		//restext.text = "RESOURCES \n CHARM : " + Mathf.Max(resources[0], 0) + " \n MONEY: " + resources[1] + " \n OXYGEN: " + resources[2] + " \n WATER: " + resources[3] + " \n CARBON " + resources[4] + " \n\nGAIN 50 MONEY TO WIN";
+		levelUi.setResources(Mathf.Max(resources[0], 0), resources[2], resources[3], resources[4]);
+		levelUi.setGoal(resources[1]);
+		
 		wintext.text = "";
 		if(resources[1] >= 50){
-			//Change to text script
 			wintext.text = "YOU WIN! Press R to Restart!";
 			won = true;
 		}
@@ -214,7 +214,7 @@ public class Manager : MonoBehaviour, Timerble
 	{
 		water++;
 		//Change to text script
-		waterCount.text = "Water: " + water;
+		//waterCount.text = "Water: " + water;
 	}
 	
 	private void coinmanage(){
