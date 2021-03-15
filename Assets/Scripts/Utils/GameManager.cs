@@ -73,42 +73,4 @@ public class GameManager : Singleton<GameManager>
             return;
         }
     }
-
-    //pausing and unpausing
-
-    public void Pause()
-    {
-        Time.timeScale = 0f;
-        //pauseMenu.SetActive(true);
-    }
-
-    public void UnPause()
-    {
-        Time.timeScale = 1f;
-        //pauseMenu.SetActive(false);
-    }
-
-    private void Update()
-    {
-        if(CurrentLevelName == string.Empty)
-        {
-            shopUI.SetActive(false);
-        }
-        else
-        {
-            shopUI.SetActive(true);
-        }
-
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            Pause();
-        }
-        if (Input.GetKeyUp(KeyCode.P))
-        {
-            UnPause();
-        }
-    }
-
-
-
 }

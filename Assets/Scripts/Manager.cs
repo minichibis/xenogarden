@@ -211,9 +211,10 @@ public class Manager : MonoBehaviour, Timerble
 		if(resources[1] >= 50){
 			wintext.text = "YOU WIN! Press R to Restart!";
 			won = true;
-		}
-		if (Input.GetKeyDown(KeyCode.R)){
-			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+			if (Input.GetKeyDown(KeyCode.R))
+			{
+				SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+			}
 		}
     }
 	
