@@ -7,8 +7,9 @@ public class JellCheese : PlantBase, PlantCharming, PlantUpkeep
     int damaged = 0;
 	int[] haves = new int[]{0, 0, 0, 5, 0, 0, 0, 0};
 	int[] needs = new int[]{0, 0, 0, 1, 0, 0, 0, 0};
+	public AudioClip water;
 
-    public override void thePlantUpdate(){
+	public override void thePlantUpdate(){
 		haves[3] = Mathf.Min(haves[3], 5);
 		if(haves[3] >= 1){
 			damaged--;
@@ -25,7 +26,9 @@ public class JellCheese : PlantBase, PlantCharming, PlantUpkeep
 		return needs;
 	}
 	
-	public int[] returnUpkeepHas(){
+	public int[] returnUpkeepHas()
+	{
+		AudioSource.PlayClipAtPoint(water, transform.position, 1.0f);
 		return haves;
 	}
 	

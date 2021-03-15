@@ -7,8 +7,9 @@ public class PuffSmile : PlantBase, PlantCharming, PlantUpkeep
     int damaged = 0;
 	int[] haves = new int[]{0, 0, 12, 0, 0, 0, 0, 0};
 	int[] needs = new int[]{0, 0, 2, 0, 0, 0, 0, 0};
+	public AudioClip spray;
 
-    public override void thePlantUpdate(){
+	public override void thePlantUpdate(){
 		haves[2] = Mathf.Min(haves[2], 12);
 		if(haves[2] >= 2){
 			damaged--;
@@ -25,7 +26,9 @@ public class PuffSmile : PlantBase, PlantCharming, PlantUpkeep
 		return needs;
 	}
 	
-	public int[] returnUpkeepHas(){
+	public int[] returnUpkeepHas()
+	{
+		AudioSource.PlayClipAtPoint(spray, transform.position, 1.0f);
 		return haves;
 	}
 	

@@ -94,3 +94,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dirt: {fileID: 0}
   currentcolor: {r: 1, g: 1, b: 1, a: 1}
+  dig: {fileID: 8300000, guid: be7b34c97be071c48b8c36ab24308fc2, type: 3}
+  water: {fileID: 8300000, guid: 8698c59ca3a41644595427583a09a1ba, type: 3}

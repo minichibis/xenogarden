@@ -124,3 +124,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 1
+  collect: {fileID: 8300000, guid: fa3eb3536b2f9974d83cfc4a58eee043, type: 3}

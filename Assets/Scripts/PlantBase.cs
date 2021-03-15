@@ -10,9 +10,9 @@ public abstract class PlantBase : MonoBehaviour, Timerble
 	//returning plant output is probably going to be calculated through thePlantUpdate
 	//charm will be done through an external script, through PlantCharming interface
 	//upkeep will need the PlantUpkeep interface, although managing it might be a bear. We could probably do it in the timesignal update?
-	
-    // Start is called before the first frame update
-    void Start()
+
+	// Start is called before the first frame update
+	void Start()
     {
         
     }

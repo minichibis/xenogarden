@@ -6,6 +6,8 @@ public class DirtFactory : MonoBehaviour
 {
 	private Manager m;
 	private TimeSignal t;
+	public AudioClip planting;
+
 	void Start(){
 		m = Object.FindObjectOfType<Manager>();
 		t = Object.FindObjectOfType<TimeSignal>();
@@ -28,6 +30,7 @@ public class DirtFactory : MonoBehaviour
 		}else if(type == 7){
 			p = Instantiate(m.planttypes[6]).GetComponent<PlantBase>();
 		}
+		AudioSource.PlayClipAtPoint(planting, d.transform.position, 1.0f);
 		p.transform.position = new Vector3(d.transform.position.x, d.transform.position.y, -1);
 		p.dirt = d;
 		t.observers.Add(p);
