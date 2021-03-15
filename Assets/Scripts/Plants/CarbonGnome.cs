@@ -9,6 +9,6 @@ public class CarbonGnome : PlantBase, PlantCharming
 	}
 	
 	public int returnCharm(){
-		return 10;
+		return 20;
 	}
 }
