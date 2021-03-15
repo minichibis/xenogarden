@@ -19,7 +19,7 @@ public class PuffSmile : PlantBase, PlantCharming, PlantUpkeep
 	}
 	
 	public int returnCharm(){
-		return 15;
+		return 10;
 	}
 	
 	public int[] returnUpkeepNeeds(){
@@ -28,7 +28,6 @@ public class PuffSmile : PlantBase, PlantCharming, PlantUpkeep
 	
 	public int[] returnUpkeepHas()
 	{
-		AudioSource.PlayClipAtPoint(spray, transform.position, 1.0f);
 		return haves;
 	}
 	
@@ -36,6 +35,7 @@ public class PuffSmile : PlantBase, PlantCharming, PlantUpkeep
 		if(damaged > 2){
 			killThis();
 		}
+		//AudioSource.PlayClipAtPoint(spray, transform.position, 1.0f);
 		damaged++;
 		GetComponent<Renderer>().material.color = Color.red;
 		transform.localScale = new Vector3(1.5f, 0.5f, 0.5f);

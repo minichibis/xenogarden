@@ -13,8 +13,8 @@ public class Manager : MonoBehaviour, Timerble
 	public CoinFactory coinf;
 	//public
 	public List<GameObject> planttypes = new List<GameObject>();
-	//WATERBULB, OXYTUBER, PUFFSMILE, JELLCHEESE, CARBONVENT, TOIL RIG, CARBON GNOME
-	public int[][] plantcosts = new int[][]{new int[]{0, 0, 3, 0, 0, 0, 0, 0},new int[]{0, 0, 10, 10, 0, 0, 0, 0},new int[]{0, 0, 15, 15, 0, 0, 0, 0},new int[]{0, 5, 10, 20, 0, 0, 0, 0},new int[]{0, 15, 25, 0, 0, 0, 0, 0},new int[]{0, 0, 20, 0, 5, 0, 0, 0},new int[]{0, 5, 0, 0, 5, 0, 0, 0}};
+	
+	public int[][] plantcosts;
 	
 	public string[] tooltips = new string[]{
 		"WATERBULB, the most basic plant. Has a short lifespan and provides water. Costs 3 OXYGEN to plant.", 
@@ -27,6 +27,13 @@ public class Manager : MonoBehaviour, Timerble
 		"SHOVEL, a basic tool for digging up unwanted plants.", 
 		"OXY-INJECTOR, used to provide oxygen to plants that rely on it, like PUFFSMILES.", 
 		"WATERING CAN, used to water plants that need it to live, like JELLCHEESE."};
+	
+	public string[] costtxt;
+	
+	public string[] reqtxt;
+	
+	public string[] prodtxt;
+	
 	
 	public Sprite[] toolimg;
 	public GameObject photo;
@@ -59,6 +66,46 @@ public class Manager : MonoBehaviour, Timerble
 		//RESOURCE ORDER: CHARM, MONEY, OXYGEN, WATER, CARBON, ENERGY, RUST, CHROME
 		resources = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
 		won = false;
+		//WATERBULB, OXYTUBER, PUFFSMILE, JELLCHEESE, CARBONVENT, TOIL RIG, CARBON GNOME
+		plantcosts = new int[][]{
+			new int[]{0, 0, 3, 0, 0, 0, 0, 0},
+			new int[]{0, 0, 10, 10, 0, 0, 0, 0},
+			new int[]{0, 0, 15, 15, 0, 0, 0, 0},
+			new int[]{0, 3, 10, 20, 0, 0, 0, 0},
+			new int[]{0, 10, 25, 0, 0, 0, 0, 0},
+			new int[]{0, 0, 20, 0, 5, 0, 0, 0},
+			new int[]{0, 5, 0, 0, 5, 0, 0, 0}
+		};
+		costtxt = new string[]{
+			"NA",
+			"3 Oxy",
+			"10 Oxy, 10 Wat",
+			"10 Oxy, 15 Wat",
+			"3 Gold, 10 Oxy, 20 Wat",
+			"10 Gold, 25 Oxy",
+			"20 Oxy, 5 Carb",
+			"5 Gold, 5 Carb"
+		};
+		reqtxt = new string[]{
+			"NA",
+			"LIFESPAN 15 Ticks",
+			"LIFESPAN 50 Ticks",
+			"UPKEEP 2 Oxy, Max 12",
+			"UPKEEP 1 Wat, Max 5",
+			"LIFESPAN 50 Ticks",
+			"LIFESPAN 50 Ticks",
+			"NA"
+		};
+		prodtxt = new string[]{
+			"NA",
+			"1 Wat/ 3 Ticks",
+			"3 Oxy/5 Ticks, 5 Charm",
+			"10 Charm",
+			"25 Charm",
+			"1 Carb/5 Ticks, -25 Charm",
+			"Oxy,Wat,Carb/2 Ticks,-15Ch",
+			"20 Charm"
+		};
     }
 
     // Update is called once per frame
@@ -156,6 +203,9 @@ public class Manager : MonoBehaviour, Timerble
 		//restext.text = "RESOURCES \n CHARM : " + Mathf.Max(resources[0], 0) + " \n MONEY: " + resources[1] + " \n OXYGEN: " + resources[2] + " \n WATER: " + resources[3] + " \n CARBON " + resources[4] + " \n\nGAIN 50 MONEY TO WIN";
 		levelUi.setResources(Mathf.Max(resources[0], 0), resources[2], resources[3], resources[4]);
 		levelUi.setGoal(resources[1]);
+		levelUi.costText.text = costtxt[heldseed];
+		levelUi.requireText.text = reqtxt[heldseed];
+		levelUi.produceText.text = prodtxt[heldseed];
 		
 		wintext.text = "";
 		if(resources[1] >= 50){

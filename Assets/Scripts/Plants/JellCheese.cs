@@ -28,7 +28,7 @@ public class JellCheese : PlantBase, PlantCharming, PlantUpkeep
 	
 	public int[] returnUpkeepHas()
 	{
-		AudioSource.PlayClipAtPoint(water, transform.position, 1.0f);
+		//AudioSource.PlayClipAtPoint(water, transform.position, 1.0f);
 		return haves;
 	}
 	
