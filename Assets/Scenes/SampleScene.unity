@@ -6361,6 +6361,10 @@ MonoBehaviour:
   m: {fileID: 1765445548}
   f: {fileID: 763581658}
   p: {fileID: 0}
+  water: {fileID: 8300000, guid: 8698c59ca3a41644595427583a09a1ba, type: 3}
+  spray: {fileID: 8300000, guid: 83096c87e501e7746a8049395d0a1e62, type: 3}
+  dig: {fileID: 8300000, guid: be7b34c97be071c48b8c36ab24308fc2, type: 3}
+  error: {fileID: 8300000, guid: 8a204bcab9894c14a8adb0779882abdf, type: 3}
 --- !u!1 &938581064
 GameObject:
   m_ObjectHideFlags: 0
@@ -6888,6 +6892,10 @@ MonoBehaviour:
   m: {fileID: 1765445548}
   f: {fileID: 763581658}
   p: {fileID: 0}
+  water: {fileID: 8300000, guid: 8698c59ca3a41644595427583a09a1ba, type: 3}
+  spray: {fileID: 8300000, guid: 83096c87e501e7746a8049395d0a1e62, type: 3}
+  dig: {fileID: 8300000, guid: be7b34c97be071c48b8c36ab24308fc2, type: 3}
+  error: {fileID: 8300000, guid: 8a204bcab9894c14a8adb0779882abdf, type: 3}
 --- !u!1 &993230389
 GameObject:
   m_ObjectHideFlags: 0
@@ -8047,6 +8055,10 @@ MonoBehaviour:
   m: {fileID: 1765445548}
   f: {fileID: 763581658}
   p: {fileID: 0}
+  water: {fileID: 8300000, guid: 8698c59ca3a41644595427583a09a1ba, type: 3}
+  spray: {fileID: 8300000, guid: 83096c87e501e7746a8049395d0a1e62, type: 3}
+  dig: {fileID: 8300000, guid: be7b34c97be071c48b8c36ab24308fc2, type: 3}
+  error: {fileID: 8300000, guid: 8a204bcab9894c14a8adb0779882abdf, type: 3}
 --- !u!1 &1238217568
 GameObject:
   m_ObjectHideFlags: 0
@@ -8376,6 +8388,10 @@ MonoBehaviour:
   m: {fileID: 1765445548}
   f: {fileID: 763581658}
   p: {fileID: 0}
+  water: {fileID: 8300000, guid: 8698c59ca3a41644595427583a09a1ba, type: 3}
+  spray: {fileID: 8300000, guid: 83096c87e501e7746a8049395d0a1e62, type: 3}
+  dig: {fileID: 8300000, guid: be7b34c97be071c48b8c36ab24308fc2, type: 3}
+  error: {fileID: 8300000, guid: 8a204bcab9894c14a8adb0779882abdf, type: 3}
 --- !u!1 &1298261857
 GameObject:
   m_ObjectHideFlags: 0
@@ -8598,6 +8614,10 @@ MonoBehaviour:
   m: {fileID: 1765445548}
   f: {fileID: 763581658}
   p: {fileID: 0}
+  water: {fileID: 8300000, guid: 8698c59ca3a41644595427583a09a1ba, type: 3}
+  spray: {fileID: 8300000, guid: 83096c87e501e7746a8049395d0a1e62, type: 3}
+  dig: {fileID: 8300000, guid: be7b34c97be071c48b8c36ab24308fc2, type: 3}
+  error: {fileID: 8300000, guid: 8a204bcab9894c14a8adb0779882abdf, type: 3}
 --- !u!1 &1398173822
 GameObject:
   m_ObjectHideFlags: 0
@@ -9474,6 +9494,10 @@ MonoBehaviour:
   m: {fileID: 1765445548}
   f: {fileID: 763581658}
   p: {fileID: 0}
+  water: {fileID: 8300000, guid: 8698c59ca3a41644595427583a09a1ba, type: 3}
+  spray: {fileID: 8300000, guid: 83096c87e501e7746a8049395d0a1e62, type: 3}
+  dig: {fileID: 8300000, guid: be7b34c97be071c48b8c36ab24308fc2, type: 3}
+  error: {fileID: 8300000, guid: 8a204bcab9894c14a8adb0779882abdf, type: 3}
 --- !u!1 &1594713351
 GameObject:
   m_ObjectHideFlags: 0
@@ -9661,6 +9685,10 @@ MonoBehaviour:
   m: {fileID: 1765445548}
   f: {fileID: 763581658}
   p: {fileID: 0}
+  water: {fileID: 8300000, guid: 8698c59ca3a41644595427583a09a1ba, type: 3}
+  spray: {fileID: 8300000, guid: 83096c87e501e7746a8049395d0a1e62, type: 3}
+  dig: {fileID: 8300000, guid: be7b34c97be071c48b8c36ab24308fc2, type: 3}
+  error: {fileID: 8300000, guid: 8a204bcab9894c14a8adb0779882abdf, type: 3}
 --- !u!1 &1630214444
 GameObject:
   m_ObjectHideFlags: 0
@@ -10142,6 +10170,10 @@ MonoBehaviour:
   m: {fileID: 1765445548}
   f: {fileID: 763581658}
   p: {fileID: 0}
+  water: {fileID: 8300000, guid: 8698c59ca3a41644595427583a09a1ba, type: 3}
+  spray: {fileID: 8300000, guid: 83096c87e501e7746a8049395d0a1e62, type: 3}
+  dig: {fileID: 8300000, guid: be7b34c97be071c48b8c36ab24308fc2, type: 3}
+  error: {fileID: 8300000, guid: 8a204bcab9894c14a8adb0779882abdf, type: 3}
 --- !u!1 &1736214727
 GameObject:
   m_ObjectHideFlags: 0
@@ -10518,6 +10550,10 @@ MonoBehaviour:
   m: {fileID: 1765445548}
   f: {fileID: 763581658}
   p: {fileID: 0}
+  water: {fileID: 8300000, guid: 8698c59ca3a41644595427583a09a1ba, type: 3}
+  spray: {fileID: 8300000, guid: 83096c87e501e7746a8049395d0a1e62, type: 3}
+  dig: {fileID: 8300000, guid: be7b34c97be071c48b8c36ab24308fc2, type: 3}
+  error: {fileID: 8300000, guid: 8a204bcab9894c14a8adb0779882abdf, type: 3}
 --- !u!1 &1862663323
 GameObject:
   m_ObjectHideFlags: 0

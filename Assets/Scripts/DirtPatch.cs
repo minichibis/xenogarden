@@ -9,6 +9,10 @@ public class DirtPatch : MonoBehaviour
 	public Manager m;
 	public DirtFactory f;
 	public PlantBase p;
+	public AudioClip water;
+	public AudioClip spray;
+	public AudioClip dig;
+	public AudioClip error;
     // Start is called before the first frame update
     void Start(){
 		p = null;
@@ -41,8 +45,11 @@ public class DirtPatch : MonoBehaviour
 					}
 					p = f.MakePlant(this, m.heldseed);
 					GetComponent<Renderer>().material = m1;
+				}else if(p == null){
+					AudioSource.PlayClipAtPoint(error, transform.position, 1.0f);
 				}
 			} else if(m.heldtool == 1 && p != null){
+				AudioSource.PlayClipAtPoint(dig, transform.position, 1.0f);
 				p.killThis();
 			} else if(checkmousey()){
 				addresource(p as PlantUpkeep, m.heldtool);
@@ -75,6 +82,13 @@ public class DirtPatch : MonoBehaviour
 		int addthis = Mathf.Min(m.resources[r], 5);
 		pl.returnUpkeepHas()[r] += addthis;
 		m.resources[r] -= addthis;
+		if(addthis > 0){
+			if(r == 2){
+				AudioSource.PlayClipAtPoint(spray, transform.position, 1.0f);
+			}else{
+				AudioSource.PlayClipAtPoint(water, transform.position, 1.0f);
+			}
+		}
 	}
 	
 }
