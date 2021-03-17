@@ -207,9 +207,12 @@ public class Manager : MonoBehaviour, Timerble
 		levelUi.requireText.text = reqtxt[heldseed];
 		levelUi.produceText.text = prodtxt[heldseed];
 		
-		wintext.text = "";
+		//wintext.text = "";
 		if(resources[1] >= 50){
-			wintext.text = "YOU WIN! Press R to Restart!";
+			
+			levelUi.DisplayWinPopup();
+
+			//wintext.text = "YOU WIN! Press R to Restart!";
 			won = true;
 			if (Input.GetKeyDown(KeyCode.R))
 			{

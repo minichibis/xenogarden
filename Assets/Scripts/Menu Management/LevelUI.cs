@@ -8,6 +8,10 @@ public class LevelUI : MonoBehaviour
     //Panel References
     public GameObject ResourcePanel;
     public GameObject SelectPanel;
+    public GameObject GoalPanel;
+    public GameObject WinPanel;
+    public GameObject pauseButton;
+    public GameObject sprite;
 
     //Goal Value Reference
     public TextMeshProUGUI goalText;
@@ -166,6 +170,22 @@ public class LevelUI : MonoBehaviour
     public void setGoal(int playerMoney)
     {
         goalText.text = "" + playerMoney + " / " + goalAmount + " Gold Earned"; 
+    }
+    #endregion
+
+    #region DisplayWinPopup Function
+    public void DisplayWinPopup()
+    {
+        //start by disabling other windows
+        ResourcePanel.SetActive(false);
+        SelectPanel.SetActive(false);
+        GoalPanel.SetActive(false);
+        pauseButton.SetActive(false);
+        sprite.SetActive(false);
+
+        //enable new window for Game win
+        WinPanel.SetActive(true);
+    
     }
     #endregion
 }
