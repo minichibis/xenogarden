@@ -11,6 +11,7 @@ public class Manager : MonoBehaviour, Timerble
 
 	//stuff
 	public CoinFactory coinf;
+	public TutorialManager tutorialManager;
 	//public
 	public List<GameObject> planttypes = new List<GameObject>();
 	
@@ -272,18 +273,26 @@ public class Manager : MonoBehaviour, Timerble
 	}
 	
 	private void coinmanage(){
-		if(Random.Range(0f, 30f) < 25){
-			int c = Mathf.Max(resources[0] + 5 - pennycharm, 0);
-			if(Random.Range(0f, 100f) <= c){
-				pennycharm += 5;
-				coinf.CoinMake(1);
+		if (!tutorialManager.tutorialActive)
+		{
+			if (Random.Range(0f, 30f) < 25)
+			{
+				int c = Mathf.Max(resources[0] + 5 - pennycharm, 0);
+				if (Random.Range(0f, 100f) <= c)
+				{
+					pennycharm += 5;
+					coinf.CoinMake(1);
+				}
 			}
-		} else{
-			int c = Mathf.Max(resources[0] - 15 - nickelcharm, 0);
-			if(Random.Range(0f, 100f) <= c){
-				nickelcharm += 15;
-				pennycharm += 5;
-				coinf.CoinMake(2);
+			else
+			{
+				int c = Mathf.Max(resources[0] - 15 - nickelcharm, 0);
+				if (Random.Range(0f, 100f) <= c)
+				{
+					nickelcharm += 15;
+					pennycharm += 5;
+					coinf.CoinMake(2);
+				}
 			}
 		}
 	}
