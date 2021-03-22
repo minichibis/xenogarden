@@ -29,7 +29,7 @@ public class TutorialManager : MonoBehaviour
             }
         }
 
-        if (popUpIndex == 0 || popUpIndex == 2 || popUpIndex == 3 || popUpIndex == 5 || popUpIndex == 6 || popUpIndex == 7 || popUpIndex == 9)
+        if (popUpIndex == 0 || popUpIndex == 2 || popUpIndex == 3 || popUpIndex == 5 || popUpIndex == 7 || popUpIndex == 9)
         {
             if (Input.GetKeyDown(KeyCode.Return))
             {
@@ -46,6 +46,14 @@ public class TutorialManager : MonoBehaviour
         else if (popUpIndex == 4)
         {
             if (manager.resources[3] >= 15)
+            {
+                popUpIndex++;
+            }
+        }
+        else if (popUpIndex == 6)
+        {
+            tutorialActive = false;
+            if (Input.GetKeyDown(KeyCode.Return))
             {
                 popUpIndex++;
             }
