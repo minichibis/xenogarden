@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
+    public GameObject encyclopediaScreen;
+    private bool inEncyclopedia = false;
+
     public void pause()
     {
         Time.timeScale = 0;
@@ -20,5 +23,23 @@ public class PauseMenu : MonoBehaviour
     public void restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void encyclopedia()
+    {
+        inEncyclopedia = true;
+        encyclopediaScreen.SetActive(true);
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (inEncyclopedia)
+            {
+                encyclopediaScreen.SetActive(false);
+                inEncyclopedia = false;
+            }
+        }
     }
 }
